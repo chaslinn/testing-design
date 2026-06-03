@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html,body{margin:0}
+  body{width:700px;font-family:var(--font-body);background:var(--cb-white);padding:24px 26px;box-sizing:border-box;display:flex;gap:18px}
+  .col{flex:1;display:flex;flex-direction:column;gap:6px}
+  label{font-size:12px;font-weight:700;color:var(--fg-2)}
+  .field{display:flex;align-items:center;gap:9px;border:1.5px solid var(--cb-line);border-radius:14px;padding:12px 14px;background:#fff}
+  .field.focus{border-color:var(--cb-green);box-shadow:var(--focus-ring)}
+  .field input{border:none;outline:none;font-family:var(--font-body);font-size:15px;width:100%;color:var(--cb-ink);background:transparent}
+  .field svg{width:18px;height:18px;color:var(--cb-ink-400)}
+  .field.focus svg{color:var(--cb-green-700)}
+  .hint{font-size:11.5px;color:var(--fg-3)}
+</style>
+</head>
+<body>
+  <div class="col">
+    <label>Search retailers</label>
+    <div class="field"><i data-lucide="search"></i><input placeholder="Find coupons…"></div>
+    <span class="hint">Default · hairline border</span>
+  </div>
+  <div class="col">
+    <label>Email address</label>
+    <div class="field focus"><i data-lucide="mail"></i><input value="hello@change-box.net"></div>
+    <span class="hint">Focus · green ring</span>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

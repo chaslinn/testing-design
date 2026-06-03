@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change Box — App UI Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { font-family: var(--font-body); color: var(--cb-ink);
+    background: radial-gradient(circle at 50% 0%, #EEFBF6, #F2F4F3 60%);
+    display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+  button { font-family: inherit; }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+  @keyframes cbToastIn { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translate(-50%, 0); } }
+</style>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="android-frame.jsx"></script>
+<script type="text/babel" src="Shell.jsx"></script>
+<script type="text/babel" src="Coupons.jsx"></script>
+<script type="text/babel" src="CouponScreens.jsx"></script>
+<script type="text/babel" src="Messages.jsx"></script>
+<script type="text/babel">
+  const { useState } = React;
+
+  function App() {
+    // top-level nav
+    const [tab, setTab] = useState('home');         // home (inbox) | interests | profile
+    const [service, setService] = useState(null);    // null | 'coupons'
+    const [couponView, setCouponView] = useState('explore'); // explore | saved | redeem
+    const [detail, setDetail] = useState(null);      // coupon being viewed
+    const [menu, setMenu] = useState(false);
+
+    // data state
+    const [saved, setSaved] = useState([]);          // saved coupons
+    const [redeemItem, setRedeemItem] = useState(null);
+    const [openMsg, setOpenMsg] = useState(null);    // immersive message
+    const [readIds, setReadIds] = useState([]);
+    const [savedMsgIds, setSavedMsgIds] = useState(MESSAGES.filter(m => m.saved).map(m => m.id));
+    const [credits, setCredits] = useState(120);
+    const [toast, setToast] = useState(null);
+
+    // coupon helpers
+    const saveCoupon = (p) => { if (!saved.find(s => s.id === p.id)) setSaved([...saved, p]); };
+    const isSaved = (p) => !!(p && saved.find(s => s.id === p.id));
+    const redeem = (p) => { saveCoupon(p); setRedeemItem(p); setService('coupons'); setCouponView('redeem'); setDetail(null); setMenu(false); };
+
+    // message helpers
+    const openMessage = (m) => { setOpenMsg(m); if (!readIds.includes(m.id)) setReadIds([...readIds, m.id]); };
+    const toggleSaveMsg = (id) => setSavedMsgIds(s => s.includes(id) ? s.filter(x => x !== id) : [...s, id]);
+    const reward = (n) => { setCredits(c => c + n); setToast(`+${n} Food Credits earned`); setTimeout(() => setToast(null), 2600); };
+    const unread = MESSAGES.filter(m => !readIds.includes(m.id)).length;
+
+    // navigation router (from bottom nav + menu drawer)
+    const nav = (dest) => {
+      setMenu(false); setDetail(null);
+      if (dest === 'home') { setService(null); setTab('home'); }
+      else if (dest === 'interests') { setService(null); setTab('interests'); }
+      else if (dest === 'profile') { setService(null); setTab('profile'); }
+      else if (dest === 'coupons') { setService('coupons'); setCouponView('explore'); }
+      else if (dest === 'saved') { setService('coupons'); setCouponView('saved'); }
+    };
+
+    // ----- content -----
+    let content;
+    const inCoupons = service === 'coupons';
+    if (inCoupons) {
+      let inner;
+      if (detail) inner = <DetailScreen p={detail} onBack={() => setDetail(null)} onSave={saveCoupon} isSaved={isSaved(detail)} />;
+      else if (couponView === 'saved') inner = <SavedScreen saved={saved} onRedeem={redeem} onBrowse={() => setCouponView('explore')} />;
+      else if (couponView === 'redeem') inner = <RedeemScreen p={redeemItem} saved={saved} onPick={setRedeemItem} />;
+      else inner = <ExploreScreen onOpen={setDetail} />;
+      content = (
+        <React.Fragment>
+          {!detail && <CouponHeader onBack={() => nav('home')} savedCount={saved.length} onSaved={() => { setCouponView('saved'); setDetail(null); }} />}
+          {inner}
+        </React.Fragment>
+      );
+    } else if (tab === 'interests') {
+      content = <TabView icon="sliders-horizontal" title="Interests & preferences" body="Choose the topics, partners, dietary needs and message frequency you want. You're the boss — edit or delete anything, anytime." />;
+    } else if (tab === 'profile') {
+      content = <TabView icon="user" title="Your profile" body="Manage your household profile, consent options and notifications. Your data is yours to control." />;
+    } else {
+      content = <Inbox messages={MESSAGES} readIds={readIds} savedIds={savedMsgIds} onOpen={openMessage} onToggleSave={toggleSaveMsg} unread={unread} />;
+    }
+
+    const activeTab = menu ? 'menu' : (inCoupons ? 'home' : tab);
+    const hideChrome = !!detail; // coupon detail is full-screen
+
+    return (
+      <AndroidDevice width={392} height={812}>
+        <div style={{ height: '100%', position: 'relative', display: 'flex', flexDirection: 'column', background: '#fff' }}>
+          {content}
+          {!hideChrome && <BottomNav active={activeTab} onNav={(id) => id === 'menu' ? setMenu(true) : nav(id)} />}
+          {menu && <MenuDrawer credits={credits} onClose={() => setMenu(false)} onNav={nav} />}
+          {openMsg && <Immersive message={openMsg} onClose={() => setOpenMsg(null)} onReward={reward} onLink={(d) => nav(d)} />}
+          {toast && (
+            <div style={{ position: 'absolute', bottom: 92, left: '50%', transform: 'translateX(-50%)', zIndex: 40,
+              background: '#272F3A', color: '#fff', borderRadius: 999, padding: '12px 18px', display: 'flex',
+              alignItems: 'center', gap: 9, boxShadow: '0 12px 28px rgba(39,47,58,.3)', animation: 'cbToastIn .25s ease-out' }}>
+              <span style={{ width: 22, height: 22, borderRadius: 999, background: '#1DCD96', display: 'flex',
+                alignItems: 'center', justifyContent: 'center' }}><Icon name="sparkles" size={12} color="#06382A" /></span>
+              <span style={{ font: '800 13px/1 var(--font-display)' }}>{toast}</span>
+            </div>
+          )}
+        </div>
+      </AndroidDevice>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

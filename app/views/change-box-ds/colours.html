@@ -1,0 +1,49 @@
+{% extends "change-box-ds/_layout.html" %}
+{% set activeDs = "colours" %}
+{% set pageName = "Colours" %}
+
+{% block ds_content %}
+
+<span class="govuk-caption-l">Foundations</span>
+<h1 class="govuk-heading-xl">Colours</h1>
+
+<p class="govuk-body-l">
+  All colour decisions trace back to one vibrant emerald-green sampled from the Change Box logo,
+  paired with a deep ink for legibility and warm neutrals for surfaces.
+</p>
+
+<h2 class="govuk-heading-l">Primary — Change Box Green</h2>
+<p class="govuk-body">Six-step tonal scale, with <code>#1DCD96</code> as the brand mark. Use 50/100 for tints, 600/700 for text on light-green backgrounds.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/color-green.html" height="190" title="Change Box green palette"></iframe>
+
+<div class="cb-spec govuk-!-margin-top-3">
+  <div><span class="cb-spec-label">--cb-green</span> #1DCD96 &nbsp;·&nbsp; primary brand</div>
+  <div><span class="cb-spec-label">--cb-green-600</span> #14B384 &nbsp;·&nbsp; hover</div>
+  <div><span class="cb-spec-label">--cb-green-700</span> #0E9A71 &nbsp;·&nbsp; text on tints</div>
+</div>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Neutrals — warm, slightly green-grey</h2>
+<p class="govuk-body">
+  Surfaces are warm off-white (paper) and a barely-green mist, not cold grey. Body copy uses ink <code>#272F3A</code>.
+</p>
+<iframe class="cb-preview" src="/public/change-box/preview/color-neutral.html" height="190" title="Neutral palette"></iframe>
+
+<div class="cb-spec govuk-!-margin-top-3">
+  <div><span class="cb-spec-label">--cb-ink</span> #272F3A &nbsp;·&nbsp; body / wordmark</div>
+  <div><span class="cb-spec-label">--cb-paper</span> #FBFAF7 &nbsp;·&nbsp; warm off-white</div>
+  <div><span class="cb-spec-label">--cb-mist</span> #F2F4F3 &nbsp;·&nbsp; quiet surface</div>
+</div>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Semantic</h2>
+<p class="govuk-body">Muted success / warning / danger / info — never neon. Plus the warm secondary orange used sparingly for E4E coupons and savings.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/color-semantic.html" height="190" title="Semantic palette"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Usage rules</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Green</strong> is the single confident brand colour — buttons, accents, active states, logo.</li>
+  <li><strong>Orange</strong> is a secondary <em>accent</em>, not a second brand colour. Use only for promotions, savings, energy.</li>
+  <li>Never use bluish-purple gradients or cold corporate greys.</li>
+  <li>Backgrounds default to white / paper / mist. A soft green-50 wash is OK behind feature sections.</li>
+</ul>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "change-box-ds/_layout.html" %}
+{% set activeDs = "components" %}
+{% set pageName = "Components" %}
+
+{% block ds_content %}
+
+<span class="govuk-caption-l">Components</span>
+<h1 class="govuk-heading-xl">Components</h1>
+
+<p class="govuk-body-l">
+  The visual atoms of the Change Box system — assembled into the live UI kits.
+  Every component sits on white or warm paper, has soft rounded corners, and uses the brand green for action.
+</p>
+
+<h2 class="govuk-heading-l">Buttons</h2>
+<p class="govuk-body">Primary green pill with a soft green glow, secondary white with hairline border, ghost (link-style), and a warm orange for E4E coupon actions.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-buttons.html" height="170" title="Buttons"></iframe>
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+  <li>Primary fill <code>--cb-green</code>, label in ink for contrast, shadow <code>--shadow-brand</code>.</li>
+  <li>Hover: darken to <code>--cb-green-600</code>. Press: subtle 0.97 scale-down.</li>
+  <li>Focus: 3px green focus-ring — always visible.</li>
+</ul>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Form inputs</h2>
+<p class="govuk-body">Soft rounded inputs sitting on paper. Floating label or label-above patterns; never bare placeholders.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-inputs.html" height="230" title="Form inputs"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Badges and tags</h2>
+<p class="govuk-body">Pill-shaped, gentle tints — never neon. Used for category, status, and Food Credit balances in the app.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-badges.html" height="170" title="Badges"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Signature: E4E coupon card</h2>
+<p class="govuk-body">The product's hero component. Retailer-branded coupon with a warm orange savings accent.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-coupon.html" height="380" title="Coupon card"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Inbox message row</h2>
+<p class="govuk-body">A photo-thumbnail row inside the white rounded inbox card. Sender in green · time in grey. Heart = saved; chevron otherwise.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-message.html" height="200" title="Message row"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Bottom navigation</h2>
+<p class="govuk-body">The unified app's navigation: <strong>HOME · INTERESTS · PROFILE · MENU</strong>. MENU is an outlined button (bottom-right) opening the drawer of "location" items.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-bottomnav.html" height="140" title="Bottom navigation"></iframe>
+
+{% endblock %}

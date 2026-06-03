@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{width:700px;font-family:var(--font-body);background:var(--cb-paper);padding:26px;box-sizing:border-box;display:flex;gap:22px;align-items:center}
+  .col{display:flex;gap:18px;flex:1}
+  .item{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .box{width:74px;height:54px;background:var(--cb-white);border:1px solid var(--cb-line)}
+  .n{font-family:var(--font-mono);font-size:11px;color:var(--fg-3)}
+  .sh{width:88px;height:58px;background:var(--cb-white);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--fg-2)}
+</style>
+</head>
+<body>
+  <div class="col">
+    <div class="item"><div class="box" style="border-radius:6px"></div><div class="n">xs 6</div></div>
+    <div class="item"><div class="box" style="border-radius:10px"></div><div class="n">sm 10</div></div>
+    <div class="item"><div class="box" style="border-radius:14px"></div><div class="n">md 14</div></div>
+    <div class="item"><div class="box" style="border-radius:20px"></div><div class="n">lg 20</div></div>
+    <div class="item"><div class="box" style="border-radius:999px"></div><div class="n">pill</div></div>
+  </div>
+  <div class="col" style="justify-content:flex-end">
+    <div class="sh" style="box-shadow:var(--shadow-sm)">sm</div>
+    <div class="sh" style="box-shadow:var(--shadow-md)">md</div>
+    <div class="sh" style="box-shadow:var(--shadow-lg)">lg</div>
+  </div>
+</body>
+</html>

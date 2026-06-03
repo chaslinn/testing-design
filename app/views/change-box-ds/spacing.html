@@ -1,0 +1,45 @@
+{% extends "change-box-ds/_layout.html" %}
+{% set activeDs = "spacing" %}
+{% set pageName = "Spacing, radii and shadows" %}
+
+{% block ds_content %}
+
+<span class="govuk-caption-l">Foundations</span>
+<h1 class="govuk-heading-xl">Spacing, radii and shadows</h1>
+
+<p class="govuk-body-l">
+  A 4-pixel base scale, generous white space, soft rounded everything, and warm low-spread shadows.
+  Nothing is sharp-cornered; nothing is hard black.
+</p>
+
+<h2 class="govuk-heading-l">Spacing scale</h2>
+<p class="govuk-body">All spacing tokens are multiples of 4px. Use the larger steps for section padding and feature cards; the smaller steps for tight UI.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/spacing-scale.html" height="280" title="Spacing scale"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Radii and shadows</h2>
+<p class="govuk-body">
+  Inputs and cards use a soft <code>14px</code> radius, feature cards <code>20–28px</code>,
+  pills and buttons fully rounded at <code>999px</code>. Shadows are warm-tinted, low-spread,
+  with a dedicated green glow under primary CTAs.
+</p>
+<iframe class="cb-preview" src="/public/change-box/preview/radii-shadow.html" height="240" title="Radii and shadows"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Tokens</h2>
+<div class="cb-spec">
+  <div><span class="cb-spec-label">--radius-sm</span> 8px</div>
+  <div><span class="cb-spec-label">--radius-md</span> 14px &nbsp;·&nbsp; inputs, list cards</div>
+  <div><span class="cb-spec-label">--radius-lg</span> 20–28px &nbsp;·&nbsp; feature cards</div>
+  <div><span class="cb-spec-label">--radius-pill</span> 999px &nbsp;·&nbsp; buttons, pills</div>
+  <div><span class="cb-spec-label">--shadow-sm</span> low elevation</div>
+  <div><span class="cb-spec-label">--shadow-md</span> card elevation</div>
+  <div><span class="cb-spec-label">--shadow-brand</span> green glow under primary CTAs</div>
+</div>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Motion</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Restrained 150–250ms ease-out fades and slides.</li>
+  <li>Gentle press scale (≈0.97). No bounces.</li>
+  <li>Respect <code>prefers-reduced-motion</code>.</li>
+</ul>
+
+{% endblock %}

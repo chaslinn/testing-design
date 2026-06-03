@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html,body{margin:0}
+  body{width:700px;font-family:var(--font-body);background:#fff;padding:18px 22px;box-sizing:border-box;display:flex;gap:18px;align-items:center}
+  .row{flex:1;display:flex;gap:12px;align-items:flex-start;border:1px solid var(--cb-line);border-radius:14px;padding:13px}
+  .av{width:42px;height:42px;border-radius:999px;background:var(--cb-green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .nm{display:flex;align-items:center;gap:7px;margin-bottom:3px}
+  .nm b{font:800 13px/1 var(--font-display);color:var(--cb-ink)}
+  .cat{font:700 9.5px/1 var(--font-body);letter-spacing:.04em;text-transform:uppercase;color:#1c4f86;background:#DCEAF8;border-radius:999px;padding:3px 7px}
+  .ti{font:800 14px/1.25 var(--font-display);color:var(--cb-ink);margin:0 0 3px}
+  .pv{font:400 12px/1.4 var(--font-body);color:var(--cb-ink-500)}
+  .ft{display:flex;gap:12px;margin-top:7px;align-items:center}
+  .ttl{display:inline-flex;align-items:center;gap:4px;font:600 11px/1 var(--font-body);color:#8B95A5}
+  .rw{display:inline-flex;align-items:center;gap:4px;font:800 11px/1 var(--font-display);color:var(--cb-green-700)}
+  .credit{display:flex;align-items:center;gap:7px;background:#EEFBF6;border:1px solid #D6F7EC;border-radius:999px;padding:8px 14px 8px 9px;flex-shrink:0}
+  .coin{width:26px;height:26px;border-radius:999px;background:var(--cb-green);display:flex;align-items:center;justify-content:center}
+  svg{width:13px;height:13px}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="av"><svg viewBox="0 0 48 48" width="20" height="20"><path d="M24 5 9 13.2v6.3l15 8.2 15-8.2v-6.3L24 5Z" fill="#06382A"/><path d="M8 21v13.5L22.5 42V29L8 21Z" fill="#06382A"/><path d="M40 21v13.5L25.5 42V29L40 21Z" fill="#06382A" opacity=".78"/></svg></div>
+    <div style="flex:1">
+      <div class="nm"><b>GM Livewell</b><span class="cat">Life-cycle</span></div>
+      <div class="ti">Tell us what you think</div>
+      <div class="pv">Watch a 2-min summary, then answer 3 quick questions.</div>
+      <div class="ft"><span class="ttl"><i data-lucide="clock"></i> Disappears in 3 days</span><span class="rw"><i data-lucide="sparkles"></i> +5 credits</span></div>
+    </div>
+  </div>
+  <div class="credit">
+    <span class="coin"><i data-lucide="sparkles" style="color:#06382A"></i></span>
+    <div style="line-height:1"><div style="font:900 15px/1 var(--font-display);color:var(--cb-green-700)">120</div><div style="font:700 8.5px/1;letter-spacing:.04em;color:var(--cb-green-700);text-transform:uppercase">Food Credits</div></div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

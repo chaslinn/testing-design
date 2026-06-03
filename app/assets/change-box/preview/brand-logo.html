@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{width:700px;font-family:var(--font-body);background:var(--cb-white);
+    display:flex;align-items:center;gap:28px;padding:24px 28px;box-sizing:border-box}
+  .lockup{background:var(--cb-green);border-radius:var(--radius-lg);padding:22px 30px;
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .lockup img{height:84px;display:block}
+  .meta{display:flex;flex-direction:column;gap:10px}
+  .swatchrow{display:flex;gap:10px;align-items:center}
+  .chip{width:30px;height:30px;border-radius:8px;border:1px solid rgba(0,0,0,.06)}
+  .name{font-weight:800;color:var(--fg-1);font-size:15px}
+  .sub{font-size:13px;color:var(--fg-3)}
+  code{font-family:var(--font-mono);font-size:12px;color:var(--fg-2)}
+</style>
+</head>
+<body>
+  <div class="lockup"><img src="../assets/CB-logo.png" alt="Change-Box logo"></div>
+  <div class="meta">
+    <div class="name">Primary logo lockup</div>
+    <div class="sub">Faceted box glyph + rounded wordmark · always on green or white</div>
+    <div class="swatchrow">
+      <div class="chip" style="background:#1DCD96"></div><code>#1DCD96 green</code>
+    </div>
+    <div class="swatchrow">
+      <div class="chip" style="background:#272F3A"></div><code>#272F3A ink</code>
+    </div>
+  </div>
+</body>
+</html>

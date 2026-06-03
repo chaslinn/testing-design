@@ -1,0 +1,38 @@
+{% extends "change-box-ds/_layout.html" %}
+{% set activeDs = "typography" %}
+{% set pageName = "Typography" %}
+
+{% block ds_content %}
+
+<span class="govuk-caption-l">Foundations</span>
+<h1 class="govuk-heading-xl">Typography</h1>
+
+<p class="govuk-body-l">
+  One humanist family — <strong>Nunito</strong> — covers display and body, echoing the rounded geometric
+  wordmark of the logo while staying highly legible. JetBrains Mono is reserved for code and data.
+</p>
+
+<div class="cb-callout">
+  <p class="govuk-body govuk-!-margin-bottom-0">
+    <strong>Substitution flag:</strong> Nunito is the nearest widely-available match to the
+    Change Box logo wordmark. The exact font from the live Wix site was not provided. Swap when the
+    real brand fonts are supplied.
+  </p>
+</div>
+
+<h2 class="govuk-heading-l">Display</h2>
+<p class="govuk-body">Headings use <strong>Nunito 800</strong> with tight tracking. Sentence case for body and most headings; Title Case only for brand mottos ("Impact First", "Joined Up Thinking").</p>
+<iframe class="cb-preview" src="/public/change-box/preview/type-display.html" height="320" title="Display typography"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Body</h2>
+<p class="govuk-body">Body copy at Nunito 400/600, line-height 1.5. Voice is warm, plain-spoken, dignified — UK English throughout.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/type-body.html" height="320" title="Body typography"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Tokens</h2>
+<div class="cb-spec">
+  <div><span class="cb-spec-label">--font-display</span> "Nunito", system-ui, sans-serif</div>
+  <div><span class="cb-spec-label">--font-body</span> "Nunito", system-ui, sans-serif</div>
+  <div><span class="cb-spec-label">--font-mono</span> "JetBrains Mono", ui-monospace, monospace</div>
+</div>
+
+{% endblock %}

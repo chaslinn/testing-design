@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html,body{margin:0}
+  body{width:700px;font-family:var(--font-body);background:var(--cb-white);padding:26px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;border-radius:999px;padding:7px 14px}
+  .discount{background:var(--cb-green);color:#06382A;font-size:15px;padding:4px 10px;border-radius:8px}
+  .discount.o{background:var(--cb-orange);color:#fff}
+  .tag{background:var(--cb-green-100);color:var(--cb-green-700)}
+  .warn{background:var(--cb-warning-100);color:#7a5a00}
+  .info{background:var(--cb-info-100);color:#1c4f86}
+  .expiry{background:var(--cb-mist);color:var(--fg-2)}
+  svg{width:14px;height:14px}
+</style>
+</head>
+<body>
+  <span class="discount">-100%</span>
+  <span class="discount o">-65%</span>
+  <span class="pill tag"><i data-lucide="leaf"></i> Healthy choice</span>
+  <span class="pill expiry"><i data-lucide="calendar"></i> 31/10/2025</span>
+  <span class="pill info"><i data-lucide="store"></i> In local stores</span>
+  <span class="pill warn"><i data-lucide="clock"></i> Ending soon</span>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

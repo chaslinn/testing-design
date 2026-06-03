@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change Box — Design system landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    color: var(--cb-ink);
+    background: radial-gradient(circle at 50% 0%, #EEFBF6, #FBFAF7 60%);
+    min-height: 100vh;
+    padding: 48px 24px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+  .brand-row { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+  .brand-row img { height: 56px; width: auto; }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-size: 44px;
+    margin: 0 0 12px;
+    color: var(--cb-ink);
+  }
+  .lede { font-size: 18px; color: var(--cb-ink-2, #4a5263); max-width: 640px; margin: 0 0 40px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid var(--cb-line, #E6E8E6);
+    box-shadow: 0 10px 28px -18px rgba(39,47,58,0.18);
+    display: flex; flex-direction: column; gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -18px rgba(39,47,58,0.25); }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--cb-green-50, #E8FAF2);
+    color: var(--cb-green-700, #0E9A71);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px; font-weight: 700;
+    align-self: flex-start;
+  }
+  .card h2 { margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 800; }
+  .card p { margin: 0; color: var(--cb-ink-2, #4a5263); line-height: 1.5; }
+  .cta {
+    margin-top: auto;
+    background: var(--cb-green, #1DCD96);
+    color: var(--cb-ink);
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    align-self: flex-start;
+    box-shadow: 0 8px 20px -10px rgba(29,205,150,0.55);
+  }
+  .footnote { margin-top: 48px; font-size: 14px; color: var(--cb-ink-2, #6a7280); }
+  .footnote a { color: var(--cb-green-700, #0E9A71); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand-row">
+    <img src="assets/CB-logo.png" alt="Change Box">
+  </div>
+  <h1>Change Box design system</h1>
+  <p class="lede">
+    UK health-tech for social impact. Two on-brand surfaces recreated from
+    <a href="https://www.change-box.net/" style="color:var(--cb-green-700,#0E9A71);">change-box.net</a>
+    and the E4E user journey deck.
+  </p>
+
+  <div class="cards">
+    <a class="card" href="/change-box/website">
+      <span class="pill">Marketing</span>
+      <h2>Change Box website</h2>
+      <p>Hero, Essentials for Everyone pillars, partners, team, contact form. Faithful recreation of the live Wix site.</p>
+      <span class="cta">Open website →</span>
+    </a>
+
+    <a class="card" href="/change-box/app">
+      <span class="pill">Mobile app</span>
+      <h2>Change Box app</h2>
+      <p>Unified member app: immersive Inbox (HOME) + Essentials for Everyone coupon service (MENU → E4E) with single-barcode redeem.</p>
+      <span class="cta">Open app →</span>
+    </a>
+  </div>
+
+  <p class="footnote">
+    Fonts: <strong>Nunito</strong> (substitution pending real brand fonts). Icons: <strong>Lucide</strong> via CDN.
+    Tokens live in <code>colors_and_type.css</code>; assets under <code>/public/change-box/assets/</code>.
+  </p>
+</div>
+</body>
+</html>

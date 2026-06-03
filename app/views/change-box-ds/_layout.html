@@ -1,0 +1,19 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "change-box-ds/_sidenav.html" %}
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    {% block ds_content %}{% endblock %}
+  </div>
+</div>
+
+<style>
+  .cb-preview { width: 100%; border: 1px solid #b1b4b6; border-radius: 4px; display: block; background: #fff; }
+  .cb-spec { background: #f3f2f1; padding: 12px 16px; border-radius: 4px; font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 14px; }
+  .cb-spec-label { display: inline-block; min-width: 120px; color: #505a5f; }
+  .cb-callout { background: #f3f2f1; border-left: 5px solid #1d70b8; padding: 16px 20px; margin: 16px 0 24px; }
+</style>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "change-box-ds/_layout.html" %}
+{% set activeDs = "overview" %}
+{% set pageName = "Change Box design system" %}
+
+{% block ds_content %}
+
+<span class="govuk-caption-l">Documentation</span>
+<h1 class="govuk-heading-xl">Change Box design system</h1>
+
+<p class="govuk-body-l">
+  How the Change Box brand and product design system is composed — foundations, components,
+  brand assets, and the live UI kits — documented in a GOV.UK Design System style.
+</p>
+
+<div class="cb-callout">
+  <p class="govuk-body govuk-!-margin-bottom-0">
+    Source bundle: handoff from <a class="govuk-link" href="https://claude.ai/design">Claude Design</a> (June 2026).
+    UK health-tech / social-impact venture; flagship product <strong>E4E — Essentials for Everyone</strong>.
+    Recreated from the live Wix site <a class="govuk-link" href="https://www.change-box.net/">change-box.net</a>
+    and the E4E user-journey deck.
+  </p>
+</div>
+
+<h2 class="govuk-heading-l">How the system is composed</h2>
+
+<p class="govuk-body">The Change Box design system is layered, from raw brand tokens through to live UI kits:</p>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:30%">1. Foundations</dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body govuk-!-margin-bottom-2">CSS variables for the whole system. One file:
+        <code>colors_and_type.css</code>.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="/change-box-ds/colours">Colours</a> — primary green, ink, warm neutrals, semantic</li>
+        <li><a class="govuk-link" href="/change-box-ds/typography">Typography</a> — Nunito display + body, JetBrains Mono</li>
+        <li><a class="govuk-link" href="/change-box-ds/spacing">Spacing, radii &amp; shadows</a> — 4px scale, rounded everything</li>
+      </ul>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">2. Components</dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body govuk-!-margin-bottom-2">Reusable visual atoms — buttons, inputs, badges, cards.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="/change-box-ds/components">See all components</a></p>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">3. Brand assets</dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body govuk-!-margin-bottom-2">Logo, partner logos, team photos, lifestyle imagery — all copied from the live site.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="/change-box-ds/brand">See brand assets</a></p>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">4. UI kits</dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body govuk-!-margin-bottom-2">Two live, interactive recreations stitched together from the layers above:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="/change-box/website">Change Box website</a> — marketing site</li>
+        <li><a class="govuk-link" href="/change-box/app">Change Box app</a> — unified Inbox + E4E coupon service</li>
+      </ul>
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-l">Visual fundamentals at a glance</h2>
+
+<h3 class="govuk-heading-m">Primary brand scale</h3>
+<iframe class="cb-preview" src="/public/change-box/preview/color-green.html" height="190" title="Change Box green scale"></iframe>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-6">Display type</h3>
+<iframe class="cb-preview" src="/public/change-box/preview/type-display.html" height="280" title="Display typography"></iframe>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-6">Signature buttons</h3>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-buttons.html" height="170" title="Buttons"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Caveats</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Fonts</strong> — Nunito is a documented substitution; real brand fonts pending.</li>
+  <li><strong>Icons</strong> — Lucide via CDN, substitution pending the real set.</li>
+  <li><strong>No codebase / Figma</strong> — UI kits are faithful recreations from screenshots + copy, not source.</li>
+</ul>
+
+{% endblock %}

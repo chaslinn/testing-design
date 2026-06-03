@@ -7,13 +7,122 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    <h1 class="govuk-heading-xl">Testing-design prototype</h1>
+    <p class="govuk-body-l">A scratch GOV.UK Prototype Kit for exploring design-system handoffs and other experiments.</p>
+  </div>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+  <div class="govuk-grid-column-full">
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+        Change Box design system
+        <p class="govuk-body">Handoff bundle from Claude Design. UK health-tech / social-impact venture (E4E — Essentials for Everyone). Recreated from the live <a class="govuk-link" href="https://www.change-box.net/">change-box.net</a> site and the E4E user-journey deck.</p>
+      </caption>
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width:280px">Surface</th>
+          <th scope="col" class="govuk-table__header" style="width:140px">Status</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/change-box-ds">Design system docs</a><br>
+            <span class="govuk-body-s">GOV.UK-styled documentation</span>
+          </th>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Docs</strong>
+          </td>
+          <td class="govuk-table__cell">
+            How the system is composed — foundations (colours, typography, spacing), components (buttons, inputs, coupon card, inbox row, bottom nav), and brand assets. Embeds 16 live preview cards.
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/change-box">Change Box landing</a>
+          </th>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">Brand</strong>
+          </td>
+          <td class="govuk-table__cell">
+            Brand-styled hub page with cards linking to both UI kits. Uses the Change Box CSS tokens (green, ink, Nunito, soft rounded cards).
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/change-box/website">Change Box website</a><br>
+            <span class="govuk-body-s">Marketing site recreation</span>
+          </th>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">UI kit</strong>
+          </td>
+          <td class="govuk-table__cell">
+            Hero, Essentials for Everyone pillars (Dignity · Affordability · Access), partners, team, contact form. JSX prototype with in-browser Babel.
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/change-box/app">Change Box app</a><br>
+            <span class="govuk-body-s">Unified member app</span>
+          </th>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">UI kit</strong>
+          </td>
+          <td class="govuk-table__cell">
+            Immersive Inbox (HOME) + Essentials for Everyone coupon service (MENU → E4E). Browse → save → MyCoupons → single-barcode redeem. HOME · INTERESTS · PROFILE · MENU bottom nav.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="govuk-section-break govuk-section-break--xl">
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+        Prototype kit defaults
+      </caption>
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width:280px">Surface</th>
+          <th scope="col" class="govuk-table__header" style="width:140px">Status</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/manage-prototype">Manage prototype</a>
+          </th>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">Kit</strong>
+          </td>
+          <td class="govuk-table__cell">
+            GOV.UK Prototype Kit admin — plugins, templates, settings, clear data.
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/manage-prototype/clear-data">Clear data</a>
+          </th>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">Kit</strong>
+          </td>
+          <td class="govuk-table__cell">
+            Wipe session data and start fresh.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>
 

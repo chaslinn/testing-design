@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html,body{margin:0}
+  body{width:700px;font-family:var(--font-body);background:var(--cb-white);padding:26px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  button{font-family:var(--font-body);font-weight:800;font-size:15px;border-radius:999px;padding:13px 24px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:none}
+  .primary{background:var(--cb-green);color:#06382A;box-shadow:var(--shadow-brand)}
+  .secondary{background:#fff;color:var(--cb-ink);border:1.5px solid var(--cb-line-strong)}
+  .ghost{background:transparent;color:var(--cb-green-700)}
+  .orange{background:var(--cb-orange);color:#fff}
+  .disabled{background:var(--cb-mist);color:var(--cb-ink-400);box-shadow:none}
+  .sm{font-size:13px;padding:9px 16px}
+  svg{width:18px;height:18px}
+</style>
+</head>
+<body>
+  <button class="primary">Get in touch <i data-lucide="arrow-right"></i></button>
+  <button class="secondary">Read more</button>
+  <button class="orange"><i data-lucide="ticket"></i> Redeem coupon</button>
+  <button class="ghost">Learn how it works</button>
+  <button class="primary sm">Join in</button>
+  <button class="disabled">Unavailable</button>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

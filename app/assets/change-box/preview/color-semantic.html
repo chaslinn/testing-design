@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{width:700px;font-family:var(--font-body);background:var(--cb-white);padding:22px 26px;box-sizing:border-box}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  .cell{border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--cb-line)}
+  .top{height:54px}
+  .cap{padding:7px 9px;font-size:11.5px;font-weight:700;color:var(--fg-2)}
+  .cap span{display:block;font-family:var(--font-mono);font-weight:400;font-size:10px;color:var(--fg-3)}
+  .lab{margin-top:14px;font-size:13px;color:var(--fg-3);font-weight:600}
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell"><div class="top" style="background:#F47B20"></div><div class="cap">Orange<span>#F47B20</span></div></div>
+    <div class="cell"><div class="top" style="background:#1DA86F"></div><div class="cap">Success<span>#1DA86F</span></div></div>
+    <div class="cell"><div class="top" style="background:#E8A317"></div><div class="cap">Warning<span>#E8A317</span></div></div>
+    <div class="cell"><div class="top" style="background:#E2553D"></div><div class="cap">Danger<span>#E2553D</span></div></div>
+    <div class="cell"><div class="top" style="background:#2E78C7"></div><div class="cap">Info<span>#2E78C7</span></div></div>
+  </div>
+  <div class="lab">Secondary &amp; semantic — orange = coupons/savings; muted status colours</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "change-box-ds/_layout.html" %}
+{% set activeDs = "brand" %}
+{% set pageName = "Brand" %}
+
+{% block ds_content %}
+
+<span class="govuk-caption-l">Brand</span>
+<h1 class="govuk-heading-xl">Logo, partners and imagery</h1>
+
+<p class="govuk-body-l">
+  Every brand asset in this system was <strong>copied from the live <a class="govuk-link" href="https://www.change-box.net/">change-box.net</a></strong> site —
+  no asset was redrawn or invented.
+</p>
+
+<h2 class="govuk-heading-l">Logo</h2>
+<p class="govuk-body">The wordmark is a rounded geometric "Change-Box" lockup; the brand symbol is a faceted 3D box glyph in charcoal. Treat the box as the logo, not as a UI-icon style.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/brand-logo.html" height="220" title="Logo"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Partners</h2>
+<p class="govuk-body">Eight partner logos appear as round/soft-square tiles in even rows on the marketing site.</p>
+<iframe class="cb-preview" src="/public/change-box/preview/brand-partners.html" height="230" title="Partner logos"></iframe>
+<p class="govuk-body govuk-!-margin-top-3">GMCA · Livewell · TBBT · The Brick · University of Sheffield · ODI · Shopmate · N&amp;N</p>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Photography vibe</h2>
+<p class="govuk-body">
+  Warm natural daylight; real UK families, children, fresh produce, grocery baskets; shallow depth-of-field;
+  hopeful and candid — never stock-cheesy or stark "poverty" imagery. Colour grade is warm with greens and soft yellows.
+</p>
+<iframe class="cb-preview" src="/public/change-box/preview/brand-photography.html" height="280" title="Brand photography"></iframe>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Iconography</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Lucide</strong> via CDN — clean, rounded, ~2px stroke — as a documented substitution for the site's own UI icons.</li>
+  <li>Sized 18–24px, <code>currentColor</code>, in ink or green.</li>
+  <li>No emoji in brand voice. Avoid Unicode symbol icons.</li>
+</ul>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Asset locations</h2>
+<div class="cb-spec">
+  <div><span class="cb-spec-label">Logo</span> /public/change-box/assets/CB-logo.png</div>
+  <div><span class="cb-spec-label">Partners</span> /public/change-box/assets/partner-*.png</div>
+  <div><span class="cb-spec-label">Team</span> /public/change-box/assets/team-*.png</div>
+  <div><span class="cb-spec-label">Lifestyle</span> /public/change-box/assets/e4e-illustration.png, food-shopping.png, impact.png</div>
+  <div><span class="cb-spec-label">Reference</span> /public/change-box/assets/ref-inbox-screenshot.jpg</div>
+</div>
+
+{% endblock %}
