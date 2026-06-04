@@ -1,6 +1,130 @@
-//
-// For guidance on how to add CSS and SCSS see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+// ============================================================
+//  CHANGE BOX — theme for the GOV.UK Prototype Kit
+//  Drop-in: app/assets/sass/application.scss
+//  Remaps GOV.UK Frontend's look to the Change Box brand
+//  (emerald green + charcoal ink, Nunito, rounded, warm).
+//  Loaded AFTER govuk-frontend, so these rules win.
+// ============================================================
 
-// Add extra styles here
+$cb-green:      #1DCD96;
+$cb-green-600:  #19BA88;
+$cb-green-700:  #0E9A71;
+$cb-green-50:   #EEFBF6;
+$cb-green-100:  #D6F7EC;
+$cb-ink:        #272F3A;
+$cb-ink-700:    #3A4453;
+$cb-muted:      #5A6577;
+$cb-paper:      #FBFAF7;
+$cb-line:       #E4E8E7;
+$cb-on-green:   #06382A;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+// ---------- Typography: swap GDS Transport → Nunito ----------
+.govuk-template,
+.govuk-body, .govuk-body-l, .govuk-body-s, .govuk-body-m,
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
+.govuk-caption-xl, .govuk-caption-l, .govuk-caption-m,
+.govuk-link, .govuk-button, .govuk-label, .govuk-hint, .govuk-fieldset__legend,
+.govuk-table, .govuk-tag, .govuk-list, .govuk-details, .govuk-summary-list,
+.govuk-inset-text, .govuk-warning-text, .govuk-phase-banner, .govuk-back-link,
+.govuk-panel, .govuk-notification-banner, .govuk-error-summary, .govuk-error-message,
+.govuk-radios, .govuk-checkboxes, .govuk-input, .govuk-select, .govuk-textarea,
+.cb-header, .cb-footer {
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif !important;
+}
+code, kbd, pre, .govuk-\!-font-family-monospace {
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+}
+
+.govuk-heading-xl, .govuk-heading-l { letter-spacing: -0.02em; font-weight: 800; }
+.govuk-heading-m, .govuk-heading-s { font-weight: 800; }
+.govuk-body, .govuk-body-l, .govuk-body-s, .govuk-body-m { color: $cb-ink; }
+
+// ---------- Links → brand green ----------
+.govuk-link:link, .govuk-link:visited { color: $cb-green-700; text-underline-offset: .12em; }
+.govuk-link:hover { color: #0A6E51; }
+.govuk-link:active, .govuk-link:focus { color: $cb-ink; } // sits on yellow focus
+
+// ---------- Buttons → brand green with press shadow ----------
+.govuk-button {
+  background-color: $cb-green;
+  color: $cb-on-green;
+  box-shadow: 0 2px 0 $cb-green-700;
+  font-weight: 800;
+  border-radius: 8px;
+}
+.govuk-button:hover { background-color: $cb-green-600; color: $cb-on-green; }
+.govuk-button--secondary { background-color: #EDF1EF; color: $cb-ink; box-shadow: 0 2px 0 #C9D1CE; }
+.govuk-button--secondary:hover { background-color: #E2E8E5; }
+.govuk-button--warning { background-color: #D4351C; color: #fff; box-shadow: 0 2px 0 #7D1F10; }
+.govuk-button__start-icon { fill: currentColor; }
+
+// ---------- Tags → brand palette ----------
+.govuk-tag { background-color: $cb-green; color: $cb-on-green; border-radius: 6px; font-weight: 800; }
+.govuk-tag--green, .govuk-tag--turquoise { background-color: $cb-green-100; color: $cb-green-700; }
+.govuk-tag--blue { background-color: #DCEAF8; color: #1C4F86; }
+.govuk-tag--orange, .govuk-tag--yellow { background-color: #FCE6D2; color: #B5621A; }
+.govuk-tag--grey { background-color: $cb-line; color: $cb-ink-700; }
+.govuk-tag--red { background-color: #FBE2DC; color: #B22; }
+
+// ---------- Surfaces: panels, inset, callout, notification ----------
+.govuk-panel { background-color: $cb-green; color: $cb-on-green; border-radius: 16px; }
+.govuk-panel__title { letter-spacing: -0.02em; font-weight: 800; }
+
+.govuk-inset-text { border-left-color: $cb-line; }
+
+.govuk-notification-banner { border-color: $cb-green-700; border-radius: 10px; overflow: hidden; }
+.govuk-notification-banner__header { background-color: $cb-green-700; border-bottom: 0; }
+
+.govuk-phase-banner { border-bottom-color: $cb-line; }
+
+// custom callout used in the design-system pages
+.cb-callout {
+  background: $cb-green-50 !important;
+  border-left: 5px solid $cb-green !important;
+}
+
+// ---------- Form controls ----------
+.govuk-input, .govuk-select, .govuk-textarea { border-radius: 8px; border-color: $cb-ink; }
+.govuk-input:focus, .govuk-select:focus, .govuk-textarea:focus { border-color: $cb-ink; }
+// keep GOV.UK's high-contrast yellow focus everywhere (accessibility) — not overridden.
+
+// design-system preview iframe used in the DS pages
+.cb-preview { border: 1px solid $cb-line; border-radius: 12px; }
+
+// ============================================================
+//  Change Box header (replaces GOV.UK header block)
+// ============================================================
+.cb-header { background: $cb-ink; border-bottom: 4px solid $cb-green; }
+.cb-header__container {
+  display: flex; align-items: center; gap: 14px; padding: 12px 0;
+}
+.cb-header__logo { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
+.cb-header__logotype { font-weight: 900; font-size: 21px; line-height: 1; letter-spacing: -0.02em; color: #fff; white-space: nowrap; }
+.cb-header__service-name {
+  margin-left: auto; color: #fff; text-decoration: none; font-weight: 700; font-size: 19px; line-height: 1.2;
+}
+.cb-header__service-name:hover { text-decoration: underline; text-underline-offset: 3px; }
+.cb-header a:focus {
+  outline: 3px solid transparent;
+  color: $cb-on-green;
+  background-color: #FFD43B;
+  box-shadow: 0 -2px #FFD43B, 0 4px $cb-ink;
+}
+
+// ============================================================
+//  Change Box footer (replaces GOV.UK footer block)
+// ============================================================
+.cb-footer { border-top: 4px solid $cb-green; background: $cb-paper; padding: 34px 0 26px; margin-top: 40px; }
+.cb-footer__inner { display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; }
+.cb-footer__brand { display: flex; flex-direction: column; gap: 10px; max-width: 320px; }
+.cb-footer__wordmark { display: flex; align-items: center; gap: 9px; }
+.cb-footer__wordmark span { font-weight: 900; font-size: 19px; color: $cb-ink; }
+.cb-footer__tagline { margin: 0; font-size: 16px; line-height: 1.5; color: $cb-ink-700; }
+.cb-footer__nav { display: flex; gap: 56px; flex-wrap: wrap; }
+.cb-footer__col { display: flex; flex-direction: column; gap: 9px; }
+.cb-footer__heading { font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: $cb-ink; margin-bottom: 2px; }
+.cb-footer a { color: $cb-green-700; text-decoration: underline; font-size: 16px; }
+.cb-footer a:hover { color: #0A6E51; }
+.cb-footer__meta { margin-top: 26px; padding-top: 18px; border-top: 1px solid $cb-line; font-size: 15px; color: $cb-muted; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }

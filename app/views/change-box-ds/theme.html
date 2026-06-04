@@ -1,0 +1,170 @@
+{% extends "change-box-ds/_layout.html" %}
+{% set activeDs = "theme" %}
+{% set pageName = "Prototype-kit theme" %}
+
+{% block ds_content %}
+
+<span class="govuk-caption-l">Theme</span>
+<h1 class="govuk-heading-xl">Prototype-kit theme</h1>
+
+<p class="govuk-body-l">
+  A drop-in reskin of the GOV.UK Prototype Kit so every page that uses
+  <code>layouts/main.html</code> looks like Change Box — without rewriting any
+  page markup. The page you're reading right now is using it.
+</p>
+
+<div class="cb-callout">
+  <p class="govuk-body govuk-!-margin-bottom-0">
+    Source: handoff bundle from <a class="govuk-link" href="https://claude.ai/design">Claude Design</a>
+    (<code>ui_kits/prototype-kit/govuk-theme/</code>). Built against GOV.UK Frontend with
+    <code>rebrand: true</code>.
+  </p>
+</div>
+
+<h2 class="govuk-heading-l">How it works</h2>
+
+<p class="govuk-body">
+  GOV.UK Frontend ships with a <code>govuk-branded</code> layout that exposes
+  <code>{% raw %}{% block head %}{% endraw %}</code>, <code>{% raw %}{% block header %}{% endraw %}</code> and
+  <code>{% raw %}{% block footer %}{% endraw %}</code>. The theme overrides those three blocks to:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Replace the GOV.UK crown header with a charcoal-ink bar carrying the
+    Change Box glyph + wordmark + service name, under a 4&nbsp;px green rule.</li>
+  <li>Replace the OGL / Crown copyright footer with a Change Box footer
+    (brand, link columns, prototype disclaimer). No GOV.UK branding is reused.</li>
+  <li>Load Nunito (display + body) and JetBrains Mono (code) from Google Fonts.</li>
+</ul>
+
+<p class="govuk-body">
+  Then <code>application.scss</code> reskins GOV.UK Frontend's component classes
+  to the brand palette. The original <code>govuk-*</code> markup keeps working;
+  it just looks like Change Box.
+</p>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">The four files</h2>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" style="width:38%">File</th>
+      <th scope="col" class="govuk-table__header">What it does</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><code>app/views/layouts/main.html</code></th>
+      <td class="govuk-table__cell">Extends the kit's <code>govuk-branded.njk</code> layout. Overrides the <code>head</code>, <code>header</code> and <code>footer</code> blocks and pulls Nunito/JetBrains&nbsp;Mono off Google Fonts.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><code>app/views/partials/_cb-header.html</code></th>
+      <td class="govuk-table__cell">The Change Box brand header — inline SVG faceted-box glyph, charcoal background, 4&nbsp;px green rule under it, the service name on the right.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><code>app/views/partials/_cb-footer.html</code></th>
+      <td class="govuk-table__cell">The Change Box brand footer — green top-rule, brand wordmark + tagline, link columns and a "Prototype" meta line.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><code>app/assets/sass/application.scss</code></th>
+      <td class="govuk-table__cell">Everything else — type swap, link colour, button shape and press shadow, tag palette, panel shape, inset / notification / phase banner, form control radii, and the <code>.cb-callout</code> style used in these docs.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">What gets remapped</h2>
+
+<h3 class="govuk-heading-m">Type</h3>
+<p class="govuk-body">
+  GDS Transport is replaced by <strong>Nunito</strong> on every body, heading, button, label,
+  list, table, tag, panel and form control. Headings tighten their tracking
+  (<code>-0.02em</code>) and bump to weight 800 to echo the bold rounded
+  wordmark. <code>code</code>, <code>kbd</code>, <code>pre</code> and the
+  <code>govuk-!-font-family-monospace</code> override land on JetBrains Mono.
+</p>
+
+<h3 class="govuk-heading-m">Links</h3>
+<p class="govuk-body">
+  <code>.govuk-link</code> resolves to brand deep-green <code>#0E9A71</code>
+  (with a tighter <code>0.12em</code> underline offset). GOV.UK's accessible
+  <strong>yellow focus state is preserved</strong> — focus rings still meet
+  WCAG, which is why this theme is comfortable for real prototypes.
+</p>
+
+<h3 class="govuk-heading-m">Buttons</h3>
+<iframe class="cb-preview" src="/public/change-box/preview/comp-buttons.html" height="170" title="Change Box buttons (static preview)"></iframe>
+<p class="govuk-body govuk-!-margin-top-4">
+  <code>.govuk-button</code> takes the brand green background, dark green
+  press-shadow and 8&nbsp;px corner radius. The <code>--secondary</code> variant
+  is a warm neutral, <code>--warning</code> keeps a red (with a darker red press
+  shadow), and the <code>start-icon</code> arrow stays.
+</p>
+
+<h3 class="govuk-heading-m">Tags</h3>
+<p class="govuk-body">
+  The whole <code>.govuk-tag</code> family is repainted: solid green for the
+  base tag; light green for <code>--green</code> / <code>--turquoise</code>;
+  warm blue for <code>--blue</code>; soft amber for <code>--orange</code> and
+  <code>--yellow</code>; neutral line-grey for <code>--grey</code>; warm red
+  for <code>--red</code>. Corners go from sharp to a 6&nbsp;px radius.
+</p>
+<p class="govuk-body">
+  Live examples (these are <code>govuk-tag</code> markup that you'd write
+  anyway):
+</p>
+<p>
+  <strong class="govuk-tag">Base</strong>
+  <strong class="govuk-tag govuk-tag--green">Green</strong>
+  <strong class="govuk-tag govuk-tag--turquoise">Turquoise</strong>
+  <strong class="govuk-tag govuk-tag--blue">Blue</strong>
+  <strong class="govuk-tag govuk-tag--orange">Orange</strong>
+  <strong class="govuk-tag govuk-tag--yellow">Yellow</strong>
+  <strong class="govuk-tag govuk-tag--grey">Grey</strong>
+  <strong class="govuk-tag govuk-tag--red">Red</strong>
+</p>
+
+<h3 class="govuk-heading-m">Surfaces</h3>
+<p class="govuk-body">
+  <code>.govuk-panel</code> → brand green with 16&nbsp;px rounding (used for the
+  confirmation banner at the end of a journey). <code>.govuk-notification-banner</code>
+  → deep-green header with rounded corners.
+  <code>.govuk-inset-text</code> → the left rule becomes warm line-grey, so it
+  blends with the brand palette. <code>.cb-callout</code> is the brand's own
+  green-wash callout — used through these docs and demonstrated in the box at
+  the top of this page.
+</p>
+
+<h3 class="govuk-heading-m">Form controls</h3>
+<p class="govuk-body">
+  Inputs, selects and textareas pick up an 8&nbsp;px corner radius and the
+  charcoal-ink border. The yellow focus ring is not touched.
+</p>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Setting the service name</h2>
+<p class="govuk-body">
+  The header's right-hand label is the kit's <code>serviceName</code>. Set it in
+  <code>app/config.json</code>. While it's the kit's default placeholder the
+  header falls back to <strong>Essentials for Everyone</strong>.
+</p>
+<pre class="cb-spec"><code>{
+  "serviceName": "Essentials for Everyone",
+  ...
+}</code></pre>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Header &amp; footer at a glance</h2>
+<p class="govuk-body">
+  The header you can see at the top of the page right now — and the footer at
+  the bottom — are rendered by the theme. They aren't iframes; the brand is
+  baked into the layout.
+</p>
+
+<h2 class="govuk-heading-l govuk-!-margin-top-8">Caveats</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Built against GOV.UK Frontend with <code>rebrand: true</code> (the kit's current default).</li>
+  <li>The theme replaces the whole header block, so the GOV.UK
+    <strong>service-navigation</strong> bar is not rendered. If you want nav
+    links, add them inside <code>_cb-header.html</code>.</li>
+  <li>Nunito and Lucide are still documented substitutions, pending real brand assets.</li>
+</ul>
+
+{% endblock %}

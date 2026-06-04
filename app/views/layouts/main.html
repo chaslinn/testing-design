@@ -1,6 +1,22 @@
 {#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  Change Box themed base layout.
+  Replaces the GOV.UK crown header + OGL footer with Change Box brand chrome,
+  and loads Nunito. Everything else still uses GOV.UK Frontend markup, which
+  is reskinned by app/assets/sass/application.scss.
 #}
-
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+  {% include "partials/_cb-header.html" %}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/_cb-footer.html" %}
+{% endblock %}

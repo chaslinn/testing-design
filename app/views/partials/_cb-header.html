@@ -1,0 +1,20 @@
+{#
+  Change Box service header — replaces the GOV.UK crown header.
+  Falls back to "Essentials for Everyone" until you set a real serviceName
+  in app/config.json.
+#}
+<header class="cb-header" role="banner">
+  <div class="cb-header__container govuk-width-container">
+    <a href="/" class="cb-header__logo">
+      <svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+        <path d="M24 5 9 13.2v6.3l15 8.2 15-8.2v-6.3L24 5Z" fill="#1DCD96"/>
+        <path d="M8 21v13.5L22.5 42V29L8 21Z" fill="#1DCD96"/>
+        <path d="M40 21v13.5L25.5 42V29L40 21Z" fill="#1DCD96" opacity=".75"/>
+      </svg>
+      <span class="cb-header__logotype">Change-Box</span>
+    </a>
+    <a href="/" class="cb-header__service-name">
+      {{ serviceName if serviceName and serviceName != "Service name goes here" else "Essentials for Everyone" }}
+    </a>
+  </div>
+</header>
