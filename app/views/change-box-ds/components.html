@@ -41,4 +41,46 @@
 <p class="govuk-body">The unified app's navigation: <strong>HOME · INTERESTS · PROFILE · MENU</strong>. MENU is an outlined button (bottom-right) opening the drawer of "location" items.</p>
 <iframe class="cb-preview" src="/public/change-box/preview/comp-bottomnav.html" height="140" title="Bottom navigation"></iframe>
 
+<h2 class="govuk-heading-l govuk-!-margin-top-8">App frame (Android device wrapper)</h2>
+<p class="govuk-body">
+  The app UI kit renders inside an Android Material&nbsp;3 device frame
+  (<code>AndroidDevice</code> in <code>android-frame.jsx</code>): bezel,
+  status bar, gesture nav and optional keyboard. The frame is fixed at
+  <strong>392 × 812</strong> CSS pixels with an 8&nbsp;px border.
+</p>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:35%">Frame size</dt>
+    <dd class="govuk-summary-list__value"><code>width=392</code> × <code>height=812</code> (Pixel-ish portrait).</dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Border / bezel</dt>
+    <dd class="govuk-summary-list__value">8&nbsp;px solid <code>rgba(116,119,117,0.5)</code>, drop-shadow <code>0 30px 80px rgba(0,0,0,0.25)</code>.</dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Background</dt>
+    <dd class="govuk-summary-list__value">Radial wash <code>#EEFBF6 → #F2F4F3</code> behind the frame, centred.</dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Viewport fit</dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body govuk-!-margin-bottom-2">
+        The <code>#root</code> wrapper uses a CSS <code>transform: scale(...)</code> to auto-fit the frame to the browser viewport at 100&nbsp;% zoom. Never scales above 1; shrinks proportionally when the viewport is shorter than ~828&nbsp;px or narrower than ~408&nbsp;px (frame + border), accounting for the 24&nbsp;px body padding on each side.
+      </p>
+      <pre class="cb-spec"><code>#root {
+  transform: scale(min(
+    1,
+    calc((100vh - 48px) / 828),
+    calc((100vw - 48px) / 408)
+  ));
+  transform-origin: center center;
+}</code></pre>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Body overflow</dt>
+    <dd class="govuk-summary-list__value"><code>overflow: hidden</code> on <code>&lt;body&gt;</code> — scaling never creates a scrollbar.</dd>
+  </div>
+</dl>
+
 {% endblock %}

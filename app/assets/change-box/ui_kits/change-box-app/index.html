@@ -13,10 +13,17 @@
   html, body { margin: 0; height: 100%; }
   body { font-family: var(--font-body); color: var(--cb-ink);
     background: radial-gradient(circle at 50% 0%, #EEFBF6, #F2F4F3 60%);
-    display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+    display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; overflow: hidden; }
   button { font-family: inherit; }
   ::-webkit-scrollbar { width: 0; height: 0; }
   @keyframes cbToastIn { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+  /* Auto-fit the Android frame (392×812 + 8px border + box-shadow) to the viewport.
+     Never scales above 1; shrinks when the viewport is smaller than ~408×828 + 48px padding. */
+  #root {
+    transform: scale(min(1, calc((100vh - 48px) / 828), calc((100vw - 48px) / 408)));
+    transform-origin: center center;
+  }
 </style>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
