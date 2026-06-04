@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Change Box — Design system landing</title>
+<link rel="icon" type="image/jpeg" sizes="192x192" href="assets/cb-favicon.jpg">
+<link rel="shortcut icon" type="image/jpeg" href="assets/cb-favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,8 +21,16 @@
     padding: 48px 24px;
   }
   .wrap { max-width: 920px; margin: 0 auto; }
-  .brand-row { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-  .brand-row img { height: 56px; width: auto; }
+  .brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+  .brand-row img { height: 38px; width: auto; display: block; }
+  .brand-row .wordmark {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--cb-ink);
+  }
   h1 {
     font-family: var(--font-display);
     font-weight: 900;
@@ -72,7 +82,8 @@
 <body>
 <div class="wrap">
   <div class="brand-row">
-    <img src="assets/CB-logo.png" alt="Change Box">
+    <img src="assets/cb-box-glyph.png" alt="" aria-hidden="true">
+    <span class="wordmark">Change-Box</span>
   </div>
   <h1>Change Box design system</h1>
   <p class="lede">

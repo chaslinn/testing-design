@@ -8,6 +8,10 @@
 
 {% block head %}
   {{ super() }}
+  {# Override the GOV.UK favicons with the Change Box favicon (sourced from change-box.net). #}
+  <link rel="icon" type="image/jpeg" sizes="192x192" href="/public/change-box/assets/cb-favicon.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="/public/change-box/assets/cb-favicon.jpg">
+  <link rel="apple-touch-icon" href="/public/change-box/assets/cb-favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">

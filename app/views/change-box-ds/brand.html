@@ -13,8 +13,66 @@
 </p>
 
 <h2 class="govuk-heading-l">Logo</h2>
-<p class="govuk-body">The wordmark is a rounded geometric "Change-Box" lockup; the brand symbol is a faceted 3D box glyph in charcoal. Treat the box as the logo, not as a UI-icon style.</p>
-<iframe class="cb-preview" src="/public/change-box/preview/brand-logo.html" height="220" title="Logo"></iframe>
+<p class="govuk-body">
+  The brand mark is an <strong>inline lockup</strong>: a faceted isometric box symbol locked
+  up beside the rounded geometric <strong>Change-Box</strong> wordmark. This replaces the
+  older stacked symbol-over-wordmark mark that sat on a solid green block.
+</p>
+<iframe class="cb-preview" src="/public/change-box/preview/brand-logo.html" height="480" title="Logo lockup"></iframe>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-6">The mark</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Box symbol</strong> (PNG asset): charcoal <code>#272F3A</code> on transparent — for white, paper and green backgrounds. Use the white-knockout PNG on ink / dark backgrounds. <strong>Never recolour</strong>, stroke or treat the box as a UI icon.</li>
+  <li><strong>Wordmark</strong>: Nunito 900, letter-spacing <code>-0.02em</code>, line-height 1.</li>
+  <li><strong>Lockup</strong>: horizontal flex row, vertically centred, gap 10–12 px. Glyph height ≈ wordmark cap height (0.9–1.05× font size). <strong>Never stack</strong> the glyph above the wordmark and <strong>never</strong> place the lockup on a solid coloured tile.</li>
+</ul>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-6">Background treatments</h3>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Background</th>
+      <th scope="col" class="govuk-table__header">Glyph asset</th>
+      <th scope="col" class="govuk-table__header">Wordmark colour</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">White / paper <code>#FBFAF7</code></th>
+      <td class="govuk-table__cell"><code>cb-box-glyph.png</code> (charcoal)</td>
+      <td class="govuk-table__cell">Ink <code>#272F3A</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Brand green <code>#1DCD96</code></th>
+      <td class="govuk-table__cell"><code>cb-box-glyph.png</code> (charcoal)</td>
+      <td class="govuk-table__cell">Deep green <code>#06382A</code></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Ink / dark <code>#272F3A</code></th>
+      <td class="govuk-table__cell"><code>cb-box-glyph-white.png</code> (white)</td>
+      <td class="govuk-table__cell">White <code>#FFFFFF</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-6">Sizes in use</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Doc-site header</strong> (this page) — white knockout glyph 30 px on ink, wordmark 21 px.</li>
+  <li><strong>Doc-site footer</strong> — charcoal glyph 26 px on paper, wordmark 19 px.</li>
+  <li><strong>Website header</strong> — glyph 32 px, wordmark 22 px, gap 10 px.</li>
+  <li><strong>Website footer</strong> (green) — glyph 34 px, wordmark 22 px (deep green), gap 11 px.</li>
+  <li><strong>Landing page</strong> — glyph 38 px, wordmark 30 px, gap 12 px.</li>
+</ul>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-6">In-app symbol chips</h3>
+<p class="govuk-body">
+  Where the brand appears as an avatar or thumbnail (e.g. a "Change Box" message sender in
+  the app inbox), the charcoal glyph sits centred inside a brand-green container:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Round avatar</strong> — green circle, glyph at ~50% of the circle's size.</li>
+  <li><strong>Square thumbnail</strong> — 52 × 52 px, border-radius 13 px, green fill, glyph 26 px.</li>
+</ul>
 
 <h2 class="govuk-heading-l govuk-!-margin-top-8">Partners</h2>
 <p class="govuk-body">Eight partner logos appear as round/soft-square tiles in even rows on the marketing site.</p>
@@ -37,7 +95,9 @@
 
 <h2 class="govuk-heading-l govuk-!-margin-top-8">Asset locations</h2>
 <div class="cb-spec">
-  <div><span class="cb-spec-label">Logo</span> /public/change-box/assets/CB-logo.png</div>
+  <div><span class="cb-spec-label">Box glyph (charcoal)</span> /public/change-box/assets/cb-box-glyph.png</div>
+  <div><span class="cb-spec-label">Box glyph (white)</span> /public/change-box/assets/cb-box-glyph-white.png</div>
+  <div><span class="cb-spec-label">Original logo</span> /public/change-box/assets/CB-logo.png <em>(source — keep but prefer the glyph PNGs for new lockups)</em></div>
   <div><span class="cb-spec-label">Partners</span> /public/change-box/assets/partner-*.png</div>
   <div><span class="cb-spec-label">Team</span> /public/change-box/assets/team-*.png</div>
   <div><span class="cb-spec-label">Lifestyle</span> /public/change-box/assets/e4e-illustration.png, food-shopping.png, impact.png</div>

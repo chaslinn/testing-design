@@ -5,32 +5,82 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="colors_and_type.css">
 <style>
-  html,body{margin:0}
-  body{width:700px;font-family:var(--font-body);background:var(--cb-white);
-    display:flex;align-items:center;gap:28px;padding:24px 28px;box-sizing:border-box}
-  .lockup{background:var(--cb-green);border-radius:var(--radius-lg);padding:22px 30px;
-    display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-  .lockup img{height:84px;display:block}
-  .meta{display:flex;flex-direction:column;gap:10px}
-  .swatchrow{display:flex;gap:10px;align-items:center}
-  .chip{width:30px;height:30px;border-radius:8px;border:1px solid rgba(0,0,0,.06)}
-  .name{font-weight:800;color:var(--fg-1);font-size:15px}
-  .sub{font-size:13px;color:var(--fg-3)}
-  code{font-family:var(--font-mono);font-size:12px;color:var(--fg-2)}
+  html, body { margin: 0; }
+  body {
+    width: 700px; box-sizing: border-box;
+    font-family: var(--font-body); color: var(--cb-ink);
+    background: var(--cb-white); padding: 26px 28px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tile {
+    border: 1px solid var(--cb-line); border-radius: var(--radius-lg);
+    padding: 22px 24px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .tile.green { background: var(--cb-green); border-color: transparent; }
+  .tile.ink { background: var(--cb-ink); border-color: transparent; }
+  .lockup { display: flex; align-items: center; gap: 11px; }
+  .lockup img { height: 36px; width: auto; display: block; }
+  .lockup .wm { font-family: var(--font-display); font-weight: 900; font-size: 26px; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+  .wm.ink { color: var(--cb-ink); }
+  .wm.deep { color: #06382A; }
+  .wm.white { color: #fff; }
+  .label { font-size: 12px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+  .label.dim { color: var(--cb-ink-500); }
+  .label.ondark { color: rgba(255,255,255,0.75); }
+  .symbol-row { display: flex; align-items: center; gap: 22px; padding: 6px 0 2px; }
+  .symbol-row img { height: 64px; width: auto; }
+  .meta { display: flex; flex-direction: column; gap: 6px; }
+  .meta .name { font-weight: 800; font-size: 15px; }
+  .meta .sub { font-size: 13px; color: var(--cb-ink-500); line-height: 1.5; }
+  code { font-family: var(--font-mono); font-size: 12px; color: var(--cb-green-700);
+    background: var(--cb-green-50); border: 1px solid var(--cb-green-100); padding: 1px 6px; border-radius: 6px; }
+  .swatchrow { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .sw { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; }
+  .chip { width: 22px; height: 22px; border-radius: 6px; border: 1px solid rgba(0,0,0,.08); }
 </style>
 </head>
 <body>
-  <div class="lockup"><img src="../assets/CB-logo.png" alt="Change-Box logo"></div>
-  <div class="meta">
-    <div class="name">Primary logo lockup</div>
-    <div class="sub">Faceted box glyph + rounded wordmark · always on green or white</div>
-    <div class="swatchrow">
-      <div class="chip" style="background:#1DCD96"></div><code>#1DCD96 green</code>
+  <div class="symbol-row">
+    <img src="assets/cb-box-glyph.png" alt="Change-Box box symbol">
+    <div class="meta">
+      <div class="name">The box symbol</div>
+      <div class="sub">Faceted isometric box — the brand mark. Charcoal <code>#272F3A</code> on light, white knockout on dark. Pair with the wordmark inline; never stack on a coloured block.</div>
     </div>
-    <div class="swatchrow">
-      <div class="chip" style="background:#272F3A"></div><code>#272F3A ink</code>
+  </div>
+
+  <div class="grid" style="margin-top:18px">
+    <div class="tile">
+      <span class="label dim">Primary · on white</span>
+      <div class="lockup">
+        <img src="assets/cb-box-glyph.png" alt="">
+        <span class="wm ink">Change-Box</span>
+      </div>
+    </div>
+    <div class="tile green">
+      <span class="label ondark" style="color:#06382A">On brand green</span>
+      <div class="lockup">
+        <img src="assets/cb-box-glyph.png" alt="">
+        <span class="wm deep">Change-Box</span>
+      </div>
+    </div>
+    <div class="tile ink">
+      <span class="label ondark">Knockout · on ink</span>
+      <div class="lockup">
+        <img src="assets/cb-box-glyph-white.png" alt="">
+        <span class="wm white">Change-Box</span>
+      </div>
+    </div>
+    <div class="tile">
+      <span class="label dim">Tokens</span>
+      <div class="swatchrow">
+        <span class="sw"><span class="chip" style="background:#1DCD96"></span><code>#1DCD96</code></span>
+        <span class="sw"><span class="chip" style="background:#272F3A"></span><code>#272F3A</code></span>
+      </div>
+      <div class="sub" style="font-size:12px;color:var(--cb-ink-500)">
+        <code>assets/cb-box-glyph.png</code> · <code>assets/cb-box-glyph-white.png</code>
+      </div>
     </div>
   </div>
 </body>

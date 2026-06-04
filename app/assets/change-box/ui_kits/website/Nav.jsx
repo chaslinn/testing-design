@@ -16,8 +16,9 @@ function BoxGlyph({ size = 30, color = '#272F3A' }) {
 function Wordmark({ on = 'light' }) {
   const ink = on === 'green' ? '#06382A' : '#272F3A';
   return (
-    <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 9, textDecoration: 'none' }}>
-      <BoxGlyph size={30} color={ink} />
+    <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+      <img src="../../assets/cb-box-glyph.png" alt="" aria-hidden="true"
+        style={{ height: 32, width: 'auto', display: 'block' }} />
       <span style={{ font: '900 22px/1 var(--font-display)', letterSpacing: '-0.02em', color: ink }}>
         Change-Box
       </span>
@@ -71,7 +72,13 @@ function Footer({ onNav }) {
     <footer style={ft.wrap}>
       <div style={ft.inner}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 320 }}>
-          <Wordmark on="green" />
+          <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none' }}>
+            <img src="../../assets/cb-box-glyph.png" alt="" aria-hidden="true"
+              style={{ height: 34, width: 'auto', display: 'block' }} />
+            <span style={{ font: '900 22px/1 var(--font-display)', letterSpacing: '-0.02em', color: '#06382A' }}>
+              Change-Box
+            </span>
+          </a>
           <p style={{ font: '600 14px/1.6 var(--font-body)', color: '#0a4b38', margin: 0 }}>
             Innovating for social impact. Essentials for Everyone.
           </p>

@@ -21,11 +21,8 @@ function Icon({ name, size = 22, color = 'currentColor', strokeWidth = 2, fill =
 
 function BoxGlyph({ size = 20, color = '#fff' }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M24 5 9 13.2v6.3l15 8.2 15-8.2v-6.3L24 5Z" fill={color}/>
-      <path d="M8 21v13.5L22.5 42V29L8 21Z" fill={color}/>
-      <path d="M40 21v13.5L25.5 42V29L40 21Z" fill={color} opacity="0.78"/>
-    </svg>
+    <img src="../../assets/cb-box-glyph.png" alt="" aria-hidden="true"
+      style={{ width: size, height: size, objectFit: 'contain', display: 'block' }} />
   );
 }
 

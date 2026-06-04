@@ -31,7 +31,8 @@
 
 <ul class="govuk-list govuk-list--bullet">
   <li>Replace the GOV.UK crown header with a charcoal-ink bar carrying the
-    Change Box glyph + wordmark + service name, under a 4&nbsp;px green rule.</li>
+    white-knockout box glyph + <strong>Change-Box</strong> wordmark + service name,
+    under a 4&nbsp;px green rule.</li>
   <li>Replace the OGL / Crown copyright footer with a Change Box footer
     (brand, link columns, prototype disclaimer). No GOV.UK branding is reused.</li>
   <li>Load Nunito (display + body) and JetBrains Mono (code) from Google Fonts.</li>
@@ -59,11 +60,11 @@
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"><code>app/views/partials/_cb-header.html</code></th>
-      <td class="govuk-table__cell">The Change Box brand header — inline SVG faceted-box glyph, charcoal background, 4&nbsp;px green rule under it, the service name on the right.</td>
+      <td class="govuk-table__cell">The Change Box brand header — <code>cb-box-glyph-white.png</code> (30 px) on a charcoal background, <strong>Change-Box</strong> wordmark in Nunito 900, 4&nbsp;px green rule beneath, service name on the right.</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"><code>app/views/partials/_cb-footer.html</code></th>
-      <td class="govuk-table__cell">The Change Box brand footer — green top-rule, brand wordmark + tagline, link columns and a "Prototype" meta line.</td>
+      <td class="govuk-table__cell">The Change Box brand footer — green top-rule, <code>cb-box-glyph.png</code> (26 px, charcoal) + <strong>Change-Box</strong> wordmark, tagline, link columns and a "Prototype" meta line.</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"><code>app/assets/sass/application.scss</code></th>
